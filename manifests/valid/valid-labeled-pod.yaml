@@ -1,0 +1,24 @@
+# Passes: has required labels
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labeled-pod
+  labels:
+    app: frontend
+    env: staging
+    owner: pedro
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      securityContext:
+        privileged: false
+        readOnlyRootFilesystem: true
+      resources:
+        limits:
+          cpu: "200m"
+          memory: "256Mi"
+        requests:
+          cpu: "100m"
+          memory: "128Mi"

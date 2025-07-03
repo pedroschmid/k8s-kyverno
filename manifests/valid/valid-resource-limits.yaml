@@ -1,0 +1,25 @@
+# Passes: defines CPU/memory requests and limits
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resource-limits
+  labels:
+    app: backend
+    env: dev
+    owner: pedro
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      command: ["sleep", "3600"]
+      securityContext:
+        privileged: false
+        readOnlyRootFilesystem: true
+      resources:
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
