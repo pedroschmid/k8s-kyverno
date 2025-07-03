@@ -1,0 +1,28 @@
+---
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-network-policy
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: require-network-policy
+      match:
+        resources:
+          kinds:
+            - Namespace
+      validate:
+        message: "Namespaces must include at least one NetworkPolicy."
+        deny:
+          conditions:
+            all:
+              - key: "{{request.object.metadata.name}}"
+                operator: NotIn
+                value:
+                  - kube-system
+      preconditions:
+        all:
+          - key: "{{request.operation}}"
+            operator: Equals
+            value: CREATE
