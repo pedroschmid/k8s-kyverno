@@ -1,0 +1,12 @@
+cluster_name    = "minkube"
+cluster_driver  = "docker"
+cluster_version = "v1.30.0"
+cluster_addons = [
+  "default-storageclass",
+  "storage-provisioner",
+]
+helm_name       = "kyverno"
+helm_namespace  = "kyverno"
+helm_chart      = "kyverno"
+helm_repository = "https://kyverno.github.io/kyverno/"
+helm_version    = "v3.4.4"
