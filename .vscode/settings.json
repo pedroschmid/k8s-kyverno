@@ -1,0 +1,16 @@
+{
+  "terraform.formatOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "hashicorp.terraform",
+  "files.associations": {
+    "*.tf": "terraform",
+    "*.tfvars": "terraform"
+  },
+  "[terraform]": {
+    "editor.formatOnSave": true
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/kustomization.json": "*/kustomization.yaml"
+  },
+  "terminal.integrated.defaultProfile.linux": "bash"
+}
