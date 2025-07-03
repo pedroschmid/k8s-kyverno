@@ -1,0 +1,23 @@
+# Fails: missing readOnlyRootFilesystem
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rw-rootfs
+  labels:
+    app: test
+    env: dev
+    owner: pedro
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      securityContext:
+        privileged: false
+      resources:
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+        requests:
+          cpu: "100m"
+          memory: "128Mi"

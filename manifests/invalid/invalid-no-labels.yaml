@@ -1,0 +1,10 @@
+# Fails: missing required labels (app, env, owner)
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: no-labels
+spec:
+  containers:
+    - name: nginx
+      image: nginx

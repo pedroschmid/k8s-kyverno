@@ -1,0 +1,14 @@
+# Fails: no resource requests/limits defined
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: no-resources
+  labels:
+    app: test
+    env: dev
+    owner: pedro
+spec:
+  containers:
+    - name: nginx
+      image: nginx
