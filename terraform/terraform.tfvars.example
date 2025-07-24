@@ -1,4 +1,4 @@
-cluster_name    = "minkube"
+cluster_name    = "minikube"
 cluster_driver  = "docker"
 cluster_version = "v1.30.0"
 cluster_addons = [
