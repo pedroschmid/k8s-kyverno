@@ -11,7 +11,7 @@ resource "kubectl_manifest" "policies" {
   yaml_body = each.value
 
   depends_on = [
-    minikube_cluster.docker,
+    minikube_cluster.cluster,
     helm_release.kyverno
   ]
 }

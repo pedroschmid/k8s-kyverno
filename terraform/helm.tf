@@ -8,6 +8,6 @@ resource "helm_release" "kyverno" {
   create_namespace = true
 
   depends_on = [
-    minikube_cluster.docker
+    minikube_cluster.cluster
   ]
 }
